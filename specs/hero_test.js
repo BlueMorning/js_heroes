@@ -1,7 +1,9 @@
-const assert = require('assert');
-const Hero   = require('../hero.js');
-const Task   = require('../task.js');
-const Food   = require('../food.js');
+const assert              = require('assert');
+const Hero                = require('../hero.js');
+const Task                = require('../task.js');
+const Food                = require('../food.js');
+const OrderTaskBy         = require('../OrderTaskBy.js');
+const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
   describe("Hero test", function(){
 
@@ -14,22 +16,33 @@ const Food   = require('../food.js');
     let task4;
     let task5;
 
+    let orderTaskBy;
+    let orderTaskDirection;
+
     beforeEach("Setup", function(){
+
       favouriteFood = new Food("veggieBurger", 8);
+
       food          = new Food("plankton", 5);
+
       hero          = new Hero("SpongeBob", 20, favouriteFood);
 
       tasks = [];
+
       task1 = new Task("A", 1, 5, "A reward");
       task2 = new Task("B", 2, 4, "B reward");
       task3 = new Task("C", 3, 3, "C reward");
       task4 = new Task("D", 4, 2, "D reward");
       task5 = new Task("E", 5, 1, "E reward");
+
       tasks.push(task4);
       tasks.push(task3);
       tasks.push(task5);
       tasks.push(task1);
       tasks.push(task2);
+
+      orderTaskBy           = new OrderTaskBy();
+      orderTaskDirection    = new OrderTaskDirection();
     })
 
 
@@ -105,7 +118,8 @@ const Food   = require('../food.js');
     })
 
     it("should be able to sort task by ascending difficulty", function (){
-      //assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy("difficulty", "asc"));
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.difficulty, orderTaskDirection.ascending));
     })
 
     it("should be able to sort task by descending difficulty", function (){

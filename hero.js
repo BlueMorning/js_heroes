@@ -1,3 +1,6 @@
+const OrderTaskBy           = require("./OrderTaskBy.js");
+const OrderTaskDirection    = require("./OrderTaskDirection.js");
+
 const Hero = function (name, health, favouriteFood){
   this.name             = name;
   this.health           = health;
@@ -59,7 +62,25 @@ Hero.prototype.eatFood = function(food) {
 }
 
 Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
-  
+  let orderTaskBy           = new OrderTaskBy();
+  let orderTaskDirection    = new OrderTaskDirection();
+  let orderbyFunction;
+
+  if(orderBy === orderTaskBy.difficulty){
+    if(direction === orderTaskDirection.ascending){
+      orderbyFunction = function(taskA, taskB){
+        return taskA.difficultyLevel - taskB.difficultyLevel;
+      }
+    }
+    else {
+      orderbyFunction = function(taskA, taskB){
+        return taskB.difficultyLevel - taskA.difficultyLevel;
+      }
+    }
+  }
+
+
+  return this.tasksToComplete.sort(orderbyFunction);
 }
 
 
