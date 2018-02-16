@@ -18,4 +18,8 @@ Task.prototype.getPriority = function(){
   return this.priority;
 }
 
+Task.prototype.getReward = function(){
+  return this.reward;
+}
+
 module.exports = Task;

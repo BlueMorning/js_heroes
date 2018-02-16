@@ -23,5 +23,9 @@ describe("Test task", function(){
     assert.strictEqual(3, task.getPriority());
   })
 
+  it("should have a reward", function(){
+    assert.strictEqual("Live in Bikini city", task.getReward());
+  })
+
 
 })
