@@ -26,5 +26,9 @@ describe("orderTaskBy test", function(){
     assert.strictEqual("description", orderTaskBy.description);
   })
 
+  it("should have an orderByReward", function(){
+    assert.strictEqual("reward", orderTaskBy.reward);
+  })
+
 
 })

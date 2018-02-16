@@ -90,15 +90,38 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
       }
     }
   }
-  else if(orderBy === orderTaskBy.description){
+  else if(orderBy === orderTaskBy.description || orderBy === orderTaskBy.reward){
+
     if(direction === orderTaskDirection.ascending){
       orderbyFunction = function(taskA, taskB){
-        return taskB.priority - taskA.priority;
+        let stringA = orderBy === orderTaskBy.description ? taskA.description : taskA.reward;
+        let stringB = orderBy === orderTaskBy.description ? taskB.description : taskB.reward;
+
+        if (stringA < stringB) {
+          return -1;
+        }
+        else if (stringA > stringB) {
+          return 1;
+        }
+        else {
+          return 0
+        }
       }
     }
-    else {
+    else{
       orderbyFunction = function(taskA, taskB){
-        return taskA.priority - taskB.priority;
+        let stringA = orderBy === orderTaskBy.description ? taskA.description : taskA.reward;
+        let stringB = orderBy === orderTaskBy.description ? taskB.description : taskB.reward;
+
+        if (stringA < stringB) {
+          return 1;
+        }
+        else if (stringA > stringB) {
+          return -1;
+        }
+        else {
+          return 0
+        }
       }
     }
   }
