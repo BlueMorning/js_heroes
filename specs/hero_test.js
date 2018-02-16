@@ -1,14 +1,16 @@
 const assert = require('assert');
 const Hero   = require('../hero.js');
 const Task   = require('../task.js');
-
+const Food   = require('../food.js');
 
   describe("Hero test", function(){
 
     let hero;
+    let food;
 
     beforeEach("Setup", function(){
-      hero = new Hero("SpongeBob", 20, "plankton");
+      food = new Food("plankton", 5);
+      hero = new Hero("SpongeBob", 20, food);
     })
 
 
@@ -21,7 +23,8 @@ const Task   = require('../task.js');
     })
 
     it("should have a favourite food", function(){
-      assert.strictEqual("plankton", hero.getFavouriteFood());
+
+      assert.strictEqual(food, hero.getFavouriteFood());
     })
 
     it("should be able to talk", function(){
