@@ -22,11 +22,11 @@ Hero.prototype.talk = function(){
   return `Hi, my name is ${this.name}`;
 }
 
-Hero.prototype.getTaskToComplete = function(){
+Hero.prototype.getTasksToComplete = function(){
   return this.taskToComplete;
 }
 
-Hero.prototype.getTaskToCompleteCount = function(){
+Hero.prototype.getTasksToCompleteCount = function(){
   return this.taskToComplete.length;
 }
 

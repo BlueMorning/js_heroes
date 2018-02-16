@@ -29,11 +29,11 @@ const Hero   = require('../hero.js');
     })
 
     it("should have an array of task to complete", function(){
-      assert.deepEqual([], hero.getTaskToComplete());
+      assert.deepEqual([], hero.getTasksToComplete());
     })
 
     it("should be able to count how many tasks to complete the hero has", function(){
-      assert.deepEqual(0, hero.getTaskToCompleteCount());
+      assert.deepEqual(0, hero.getTasksToCompleteCount());
     })
 
   })
