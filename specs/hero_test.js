@@ -123,8 +123,8 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
     })
 
     it("should be able to sort task by descending difficulty", function (){
-
-
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.difficulty, orderTaskDirection.descending));
     })
 
 
