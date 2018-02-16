@@ -7,11 +7,29 @@ const Food   = require('../food.js');
 
     let hero;
     let food;
+    let tasks;
+    let task1;
+    let task2;
+    let task3;
+    let task4;
+    let task5;
 
     beforeEach("Setup", function(){
       favouriteFood = new Food("veggieBurger", 8);
       food          = new Food("plankton", 5);
       hero          = new Hero("SpongeBob", 20, favouriteFood);
+
+      tasks = [];
+      task1 = new Task("A", 1, 5, "A reward");
+      task2 = new Task("B", 2, 4, "B reward");
+      task3 = new Task("C", 3, 3, "C reward");
+      task4 = new Task("D", 4, 2, "D reward");
+      task5 = new Task("E", 5, 1, "E reward");
+      tasks.push(task4);
+      tasks.push(task3);
+      tasks.push(task5);
+      tasks.push(task1);
+      tasks.push(task2);
     })
 
 
@@ -85,5 +103,15 @@ const Food   = require('../food.js');
       hero.eatFood(favouriteFood);
       assert.strictEqual(20, hero.getCurrentHealth());
     })
+
+    it("should be able to sort task by ascending difficulty", function (){
+      //assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy("difficulty", "asc"));
+    })
+
+    it("should be able to sort task by descending difficulty", function (){
+
+
+    })
+
 
   })

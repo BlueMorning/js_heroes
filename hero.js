@@ -54,7 +54,13 @@ Hero.prototype.eatFood = function(food) {
     this.replenishmentValue = food.getReplenishmentValue()
   }
 
+  // The hero's health can exeed the initial health points level : this.health
   this.currentHealth = Math.min(this.health, this.currentHealth+this.replenishmentValue);
 }
+
+Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
+  
+}
+
 
 module.exports = Hero;
