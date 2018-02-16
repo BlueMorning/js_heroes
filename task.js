@@ -3,6 +3,7 @@ const Task = function(description, difficultyLevel, priority, reward){
   this.difficultyLevel = difficultyLevel;
   this.priority        = priority;
   this.reward          = reward;
+  this.isCompleted     = false;
 }
 
 
@@ -21,5 +22,6 @@ Task.prototype.getPriority = function(){
 Task.prototype.getReward = function(){
   return this.reward;
 }
+
 
 module.exports = Task;

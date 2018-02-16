@@ -27,5 +27,9 @@ describe("Test task", function(){
     assert.strictEqual("Live in Bikini city", task.getReward());
   })
 
+  it("should have be able to be marked as completed", function(){
+    assert.strictEqual(false, task.isCompleted);
+  })
+
 
 })
