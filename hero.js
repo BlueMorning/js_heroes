@@ -1,6 +1,7 @@
 const Hero = function (name, health, favouriteFood){
   this.name             = name;
   this.health           = health;
+  this.currentHealth    = health;
   this.favouriteFood    = favouriteFood;
   this.tasksToComplete  = [];
 }
@@ -12,6 +13,10 @@ Hero.prototype.getName = function(){
 
 Hero.prototype.getHealth = function(){
   return this.health;
+}
+
+Hero.prototype.getCurrentHealth = function(){
+  return this.currentHealth;
 }
 
 Hero.prototype.getFavouriteFood = function(){
@@ -41,6 +46,13 @@ Hero.prototype.removeTask = function(task){
   }
 }
 
-
+Hero.prototype.eatFood = function(food) {
+  if(this.favouriteFood.getName() === food.getName()) {
+    this.replenishmentValue = food.getReplenishmentValue() * 1.5;
+  }
+  else {
+    this.replenishmentValue = food.getReplenishmentValue()
+  }
+}
 
 module.exports = Hero;

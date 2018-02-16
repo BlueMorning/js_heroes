@@ -22,6 +22,10 @@ const Food   = require('../food.js');
         assert.strictEqual(20, hero.getHealth());
     })
 
+    it("should have a current health points counter", function(){
+      assert.strictEqual(20, hero.getCurrentHealth());
+    })
+
     it("should have a favourite food", function(){
 
       assert.strictEqual(food, hero.getFavouriteFood());
