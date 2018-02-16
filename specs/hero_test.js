@@ -28,4 +28,12 @@ const Hero   = require('../hero.js');
       assert.strictEqual("Hi, my name is SpongeBob", hero.talk())
     })
 
+    it("should have an array of task to complete", function(){
+      assert.deepEqual([], hero.getTaskToComplete());
+    })
+
+    it("should be able to count how many tasks to complete the hero has", function(){
+      assert.deepEqual(0, hero.getTaskToCompleteCount());
+    })
+
   })
