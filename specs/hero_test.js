@@ -24,4 +24,8 @@ const Hero   = require('../hero.js');
       assert.strictEqual("plankton", hero.getFavouriteFood());
     })
 
+    it("should be able to talk", function(){
+      assert.strictEqual("Hi, my name is SpongeBob", hero.talk())
+    })
+
   })

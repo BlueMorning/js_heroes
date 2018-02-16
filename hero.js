@@ -17,6 +17,10 @@ Hero.prototype.getFavouriteFood = function(){
   return this.favouriteFood;
 }
 
+Hero.prototype.talk = function(){
+  return `Hi, my name is ${this.name}`;
+}
+
 
 
 
