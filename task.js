@@ -10,4 +10,8 @@ Task.prototype.getDescription = function(){
   return this.description;
 }
 
+Task.prototype.getDifficultyLevel = function(){
+  return this.difficultyLevel;
+}
+
 module.exports = Task;

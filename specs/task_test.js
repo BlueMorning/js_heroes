@@ -15,6 +15,9 @@ describe("Test task", function(){
     assert.strictEqual("Collect plastic litters in the ocean", task.getDescription());
   })
 
+  it("should have a difficulty level", function() {
+    assert.strictEqual(10, task.getDifficultyLevel());
+  })
 
 
 })
