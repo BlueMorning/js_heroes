@@ -29,11 +29,11 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
       tasks = [];
 
-      task1 = new Task("A", 1, 5, "A reward");
-      task2 = new Task("B", 2, 4, "B reward");
-      task3 = new Task("C", 3, 3, "C reward");
-      task4 = new Task("D", 4, 2, "D reward");
-      task5 = new Task("E", 5, 1, "E reward");
+      task1 = new Task("A", 1, 5, "A reward"); task1.isCompleted = true;
+      task2 = new Task("B", 2, 4, "B reward"); task2.isCompleted = false;
+      task3 = new Task("C", 3, 3, "C reward"); task3.isCompleted = true;
+      task4 = new Task("D", 4, 2, "D reward"); task4.isCompleted = false;
+      task5 = new Task("E", 5, 1, "E reward"); task5.isCompleted = true;
 
       tasks.push(task4);
       tasks.push(task3);
@@ -137,5 +137,14 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
       assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.priority, orderTaskDirection.descending));
     })
 
+    it("should be able to filter tasks by status isCompleted - true", function (){
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual(3, hero.getTaskByStatusIsComplete(true).length);
+    })
+
+    it("should be able to filter tasks by status isCompleted - true", function (){
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual(2, hero.getTaskByStatusIsComplete(false).length);
+    })
 
   })

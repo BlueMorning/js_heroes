@@ -19,7 +19,7 @@ describe("orderTaskBy test", function(){
   })
 
   it("should have an orderByStatus", function(){
-    assert.strictEqual("status", orderTaskBy.status);
+    assert.strictEqual("isCompleted", orderTaskBy.isCompleted);
   })
 
 

@@ -91,9 +91,17 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
     }
   }
 
-
   return this.tasksToComplete.sort(orderbyFunction);
 }
+
+
+Hero.prototype.getTaskByStatusIsComplete = function (isCompleted) {
+  return this.tasksToComplete.filter(function(task){
+    return task.isCompleted === isCompleted;
+  });
+}
+
+
 
 
 module.exports = Hero;
