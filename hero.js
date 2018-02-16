@@ -50,15 +50,17 @@ Hero.prototype.removeTask = function(task){
 }
 
 Hero.prototype.eatFood = function(food) {
+
+  let revitalization;
   if(this.favouriteFood.getName() === food.getName()) {
-    this.replenishmentValue = food.getReplenishmentValue() * 1.5 ;
+    revitalization = food.revitalization * 1.5 ;
   }
   else {
-    this.replenishmentValue = food.getReplenishmentValue()
+    revitalization = food.revitalization;
   }
 
   // The hero's health can exeed the initial health points level : this.health
-  this.currentHealth = Math.min(this.health, this.currentHealth+this.replenishmentValue);
+  this.currentHealth = Math.min(this.health, this.currentHealth + revitalization);
 }
 
 Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
