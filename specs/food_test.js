@@ -25,6 +25,7 @@ describe("Food test", function () {
     assert.strictEqual(0, food.toxicity);
     food.becomePoisonous(rat.toxicity);
     assert.strictEqual(6, food.toxicity);
+    assert.strictEqual(-1, food.revitalization);
   })
 
 

@@ -52,7 +52,7 @@ Hero.prototype.removeTask = function(task){
 Hero.prototype.eatFood = function(food) {
 
   let revitalization;
-  if(this.favouriteFood.getName() === food.getName()) {
+  if(this.favouriteFood.getName() === food.getName() && food.toxicity === 0) {
     revitalization = food.revitalization * 1.5 ;
   }
   else {

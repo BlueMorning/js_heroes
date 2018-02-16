@@ -2,6 +2,7 @@ const assert              = require('assert');
 const Hero                = require('../hero.js');
 const Task                = require('../task.js');
 const Food                = require('../food.js');
+const Rat                 = require('../rat.js');
 const OrderTaskBy         = require('../OrderTaskBy.js');
 const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
@@ -9,6 +10,7 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
     let hero;
     let food;
+    let rat;
     let tasks;
     let task1;
     let task2;
@@ -26,6 +28,8 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
       food          = new Food("plankton", 5);
 
       hero          = new Hero("SpongeBob", 20, favouriteFood);
+
+      rat           = new Rat(6);
 
       tasks = [];
 
@@ -165,6 +169,12 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
     it("should be able to sort tasks by reward descending", function (){
       hero.tasksToComplete = tasks;
       assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.reward, orderTaskDirection.descending));
+    })
+
+    it("should be able to lose health by eating poisoned food", function() {
+      food.becomePoisonous(rat.toxicity);
+      hero.eatFood(food);
+      assert.strictEqual(19, hero.getCurrentHealth());
     })
 
   })
