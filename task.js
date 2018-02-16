@@ -23,5 +23,9 @@ Task.prototype.getReward = function(){
   return this.reward;
 }
 
+Task.prototype.setTaskAsCompleted = function(){
+  this.isCompleted = true;
+}
+
 
 module.exports = Task;
