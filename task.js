@@ -14,4 +14,8 @@ Task.prototype.getDifficultyLevel = function(){
   return this.difficultyLevel;
 }
 
+Task.prototype.getPriority = function(){
+  return this.priority;
+}
+
 module.exports = Task;

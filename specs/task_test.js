@@ -19,5 +19,9 @@ describe("Test task", function(){
     assert.strictEqual(10, task.getDifficultyLevel());
   })
 
+  it("should have a priority", function(){
+    assert.strictEqual(3, task.getPriority());
+  })
+
 
 })
