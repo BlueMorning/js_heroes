@@ -1,7 +1,7 @@
 const OrderTaskBy = function(){
-  this.orderByDifficulty = "orderByDifficulty";
-  this.orderByPriority   = "orderByPriority";
-  this.orderByStatus     = "orderByStatus";
+  this.difficulty = "difficulty";
+  this.priority   = "priority";
+  this.status     = "status";
 }
 
 module.exports = OrderTaskBy;

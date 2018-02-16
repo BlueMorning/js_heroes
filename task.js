@@ -1,6 +1,6 @@
-const Task = function(description, difficultyLevel, priority, reward){
+const Task = function(description, difficulty, priority, reward){
   this.description     = description;
-  this.difficultyLevel = difficultyLevel;
+  this.difficulty      = difficulty;
   this.priority        = priority;
   this.reward          = reward;
   this.isCompleted     = false;
@@ -11,8 +11,8 @@ Task.prototype.getDescription = function(){
   return this.description;
 }
 
-Task.prototype.getDifficultyLevel = function(){
-  return this.difficultyLevel;
+Task.prototype.getDifficulty = function(){
+  return this.difficulty;
 }
 
 Task.prototype.getPriority = function(){

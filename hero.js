@@ -69,12 +69,24 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
   if(orderBy === orderTaskBy.difficulty){
     if(direction === orderTaskDirection.ascending){
       orderbyFunction = function(taskA, taskB){
-        return taskA.difficultyLevel - taskB.difficultyLevel;
+        return taskA.difficulty - taskB.difficulty;
       }
     }
     else {
       orderbyFunction = function(taskA, taskB){
-        return taskB.difficultyLevel - taskA.difficultyLevel;
+        return taskB.difficulty - taskA.difficulty;
+      }
+    }
+  }
+  else if(orderBy === orderTaskBy.priority){
+    if(direction === orderTaskDirection.ascending){
+      orderbyFunction = function(taskA, taskB){
+        return taskA.priority - taskB.priority;
+      }
+    }
+    else {
+      orderbyFunction = function(taskA, taskB){
+        return taskB.priority - taskA.priority;
       }
     }
   }

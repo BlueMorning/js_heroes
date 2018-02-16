@@ -11,15 +11,15 @@ describe("orderTaskBy test", function(){
   })
 
   it("should have an orderByDifficulty", function(){
-    assert.strictEqual("orderByDifficulty", orderTaskBy.orderByDifficulty);
+    assert.strictEqual("difficulty", orderTaskBy.difficulty);
   })
 
   it("should have an orderByPriority", function(){
-    assert.strictEqual("orderByPriority", orderTaskBy.orderByPriority);
+    assert.strictEqual("priority", orderTaskBy.priority);
   })
 
   it("should have an orderByStatus", function(){
-    assert.strictEqual("orderByStatus", orderTaskBy.orderByStatus);
+    assert.strictEqual("status", orderTaskBy.status);
   })
 
 
