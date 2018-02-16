@@ -147,4 +147,14 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
       assert.deepStrictEqual(2, hero.getTaskByStatusIsComplete(false).length);
     })
 
+    it("should be able to sort tasks by description ascending", function (){
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.description, orderTaskDirection.ascending));
+    })
+
+    it("should be able to sort tasks by description descending", function (){
+      hero.tasksToComplete = tasks;
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.description, orderTaskDirection.descending));
+    })
+
   })

@@ -90,6 +90,18 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
       }
     }
   }
+  else if(orderBy === orderTaskBy.description){
+    if(direction === orderTaskDirection.ascending){
+      orderbyFunction = function(taskA, taskB){
+        return taskB.priority - taskA.priority;
+      }
+    }
+    else {
+      orderbyFunction = function(taskA, taskB){
+        return taskA.priority - taskB.priority;
+      }
+    }
+  }
 
   return this.tasksToComplete.sort(orderbyFunction);
 }
