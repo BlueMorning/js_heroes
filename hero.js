@@ -48,11 +48,13 @@ Hero.prototype.removeTask = function(task){
 
 Hero.prototype.eatFood = function(food) {
   if(this.favouriteFood.getName() === food.getName()) {
-    this.replenishmentValue = food.getReplenishmentValue() * 1.5;
+    this.replenishmentValue = food.getReplenishmentValue() * 1.5 ;
   }
   else {
     this.replenishmentValue = food.getReplenishmentValue()
   }
+
+  this.currentHealth = Math.min(this.health, this.currentHealth+this.replenishmentValue);
 }
 
 module.exports = Hero;

@@ -9,8 +9,9 @@ const Food   = require('../food.js');
     let food;
 
     beforeEach("Setup", function(){
-      food = new Food("plankton", 5);
-      hero = new Hero("SpongeBob", 20, food);
+      favouriteFood = new Food("veggieBurger", 8);
+      food          = new Food("plankton", 5);
+      hero          = new Hero("SpongeBob", 20, favouriteFood);
     })
 
 
@@ -28,7 +29,7 @@ const Food   = require('../food.js');
 
     it("should have a favourite food", function(){
 
-      assert.strictEqual(food, hero.getFavouriteFood());
+      assert.strictEqual(favouriteFood, hero.getFavouriteFood());
     })
 
     it("should be able to talk", function(){
@@ -61,6 +62,28 @@ const Food   = require('../food.js');
       assert.deepEqual(tasks, hero.getTasksToComplete())
       hero.removeTask(tasks[1]);
       assert.deepEqual(tasks, hero.getTasksToComplete())
+    })
+
+    it("should be able to get some health points by eating food", function(){
+      hero.currentHealth = 4;
+      assert.strictEqual(4, hero.getCurrentHealth());
+      hero.eatFood(food);
+      assert.strictEqual(9, hero.getCurrentHealth());
+      hero.eatFood(food);
+      assert.strictEqual(14, hero.getCurrentHealth());
+      hero.eatFood(food);
+      assert.strictEqual(19, hero.getCurrentHealth());
+      hero.eatFood(food);
+      assert.strictEqual(20, hero.getCurrentHealth());
+    })
+
+    it("should be able to get some extra health points by eating his favourite food", function(){
+      hero.currentHealth = 4;
+      assert.strictEqual(4, hero.getCurrentHealth());
+      hero.eatFood(favouriteFood);
+      assert.strictEqual(16, hero.getCurrentHealth());
+      hero.eatFood(favouriteFood);
+      assert.strictEqual(20, hero.getCurrentHealth());
     })
 
   })
