@@ -1,12 +1,15 @@
-const Hero = function (name, food){
-
-  this.name = name;
-  this.food = food;
+const Hero = function (name, favouriteFood){
+  this.name          = name;
+  this.favouriteFood = favouriteFood;
 }
 
 
 Hero.prototype.getName = function(){
   return this.name;
+}
+
+Hero.prototype.getFavouriteFood = function(){
+  return this.favouriteFood;
 }
 
 
