@@ -2,7 +2,7 @@ const Hero = function (name, health, favouriteFood){
   this.name             = name;
   this.health           = health;
   this.favouriteFood    = favouriteFood;
-  this.taskToComplete   = [];
+  this.tasksToComplete  = [];
 }
 
 
@@ -23,14 +23,23 @@ Hero.prototype.talk = function(){
 }
 
 Hero.prototype.getTasksToComplete = function(){
-  return this.taskToComplete;
+  return this.tasksToComplete;
 }
 
 Hero.prototype.getTasksToCompleteCount = function(){
-  return this.taskToComplete.length;
+  return this.tasksToComplete.length;
 }
 
+Hero.prototype.addTask = function(task){
+  this.tasksToComplete.push(task);
+}
 
+Hero.prototype.removeTask = function(task){
+  let indexToremove = this.tasksToComplete.indexOf(task);
+  if(indexToremove >= 0){
+    this.tasksToComplete.splice(indexToremove, 0);
+  }
+}
 
 
 
