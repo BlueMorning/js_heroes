@@ -45,7 +45,6 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
       tasks.push(task1);
       tasks.push(task2);
 
-      orderTaskBy           = new OrderTaskBy();
       orderTaskDirection    = new OrderTaskDirection();
     })
 
@@ -123,22 +122,22 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
     it("should be able to sort tasks by ascending difficulty", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.difficulty, orderTaskDirection.ascending));
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(OrderTaskBy.difficulty, orderTaskDirection.ascending));
     })
 
     it("should be able to sort tasks by descending difficulty", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.difficulty, orderTaskDirection.descending));
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(OrderTaskBy.difficulty, orderTaskDirection.descending));
     })
 
     it("should be able to sort tasks by ascending priority", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.priority, orderTaskDirection.ascending));
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(OrderTaskBy.priority, orderTaskDirection.ascending));
     })
 
     it("should be able to sort tasks by descending priority", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.priority, orderTaskDirection.descending));
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(OrderTaskBy.priority, orderTaskDirection.descending));
     })
 
     it("should be able to filter tasks by status isCompleted - true", function (){
@@ -153,22 +152,22 @@ const OrderTaskDirection  = require('../OrderTaskDirection.js');
 
     it("should be able to sort tasks by description ascending", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.description, orderTaskDirection.ascending));
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(OrderTaskBy.description, orderTaskDirection.ascending));
     })
 
     it("should be able to sort tasks by description descending", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.description, orderTaskDirection.descending));
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(OrderTaskBy.description, orderTaskDirection.descending));
     })
 
     it("should be able to sort tasks by reward ascending", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(orderTaskBy.reward, orderTaskDirection.ascending));
+      assert.deepStrictEqual([task1, task2, task3, task4, task5], hero.getTaskToCompleteBy(OrderTaskBy.reward, orderTaskDirection.ascending));
     })
 
     it("should be able to sort tasks by reward descending", function (){
       hero.tasksToComplete = tasks;
-      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(orderTaskBy.reward, orderTaskDirection.descending));
+      assert.deepStrictEqual([task5, task4, task3, task2, task1], hero.getTaskToCompleteBy(OrderTaskBy.reward, orderTaskDirection.descending));
     })
 
     it("should be able to lose health by eating poisoned food", function() {

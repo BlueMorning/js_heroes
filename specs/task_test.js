@@ -8,7 +8,6 @@ describe("Test task", function(){
 
   beforeEach("Setup", function(){
     task = new Task("Collect plastic litters in the ocean", 10, 3, "Live in Bikini city");
-
   })
 
   it("should have a description", function(){

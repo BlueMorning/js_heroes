@@ -4,30 +4,29 @@ const OrderTaskBy = require("../orderTaskBy.js");
 
 describe("orderTaskBy test", function(){
 
-  let orderTaskBy;
 
   beforeEach("Setup", function(){
-    orderTaskBy = new OrderTaskBy();
+
   })
 
   it("should have an orderByDifficulty", function(){
-    assert.strictEqual("difficulty", orderTaskBy.difficulty);
+    assert.strictEqual(Symbol("difficulty").toString(), OrderTaskBy.difficulty.toString());
   })
 
   it("should have an orderByPriority", function(){
-    assert.strictEqual("priority", orderTaskBy.priority);
+    assert.strictEqual(Symbol("priority").toString(), OrderTaskBy.priority.toString());
   })
 
   it("should have an orderByStatus", function(){
-    assert.strictEqual("isCompleted", orderTaskBy.isCompleted);
+    assert.strictEqual(Symbol("isCompleted").toString(), OrderTaskBy.isCompleted.toString());
   })
 
   it("should have an orderByDescription", function(){
-    assert.strictEqual("description", orderTaskBy.description);
+    assert.strictEqual(Symbol("description").toString(), OrderTaskBy.description.toString());
   })
 
   it("should have an orderByReward", function(){
-    assert.strictEqual("reward", orderTaskBy.reward);
+    assert.strictEqual(Symbol("reward").toString(), OrderTaskBy.reward.toString());
   })
 
 

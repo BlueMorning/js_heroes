@@ -1,9 +1,9 @@
-const OrderTaskBy = function(){
-  this.difficulty   = "difficulty";
-  this.priority     = "priority";
-  this.isCompleted  = "isCompleted";
-  this.description  = "description";
-  this.reward       = "reward";
+const OrderTaskBy = {
+  difficulty:   Symbol("difficulty"),
+  priority:     Symbol("priority"),
+  isCompleted:  Symbol("isCompleted"),
+  description:  Symbol("description"),
+  reward:       Symbol("reward")
 }
 
 module.exports = OrderTaskBy;

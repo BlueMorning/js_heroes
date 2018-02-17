@@ -64,11 +64,10 @@ Hero.prototype.eatFood = function(food) {
 }
 
 Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
-  let orderTaskBy           = new OrderTaskBy();
   let orderTaskDirection    = new OrderTaskDirection();
   let orderbyFunction;
 
-  if(orderBy === orderTaskBy.difficulty){
+  if(orderBy === OrderTaskBy.difficulty){
     if(direction === orderTaskDirection.ascending){
       orderbyFunction = function(taskA, taskB){
         return taskA.difficulty - taskB.difficulty;
@@ -80,7 +79,7 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
       }
     }
   }
-  else if(orderBy === orderTaskBy.priority){
+  else if(orderBy === OrderTaskBy.priority){
     if(direction === orderTaskDirection.ascending){
       orderbyFunction = function(taskA, taskB){
         return taskA.priority - taskB.priority;
@@ -92,12 +91,12 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
       }
     }
   }
-  else if(orderBy === orderTaskBy.description || orderBy === orderTaskBy.reward){
+  else if(orderBy === OrderTaskBy.description || orderBy === OrderTaskBy.reward){
 
     if(direction === orderTaskDirection.ascending){
       orderbyFunction = function(taskA, taskB){
-        let stringA = orderBy === orderTaskBy.description ? taskA.description : taskA.reward;
-        let stringB = orderBy === orderTaskBy.description ? taskB.description : taskB.reward;
+        let stringA = orderBy === OrderTaskBy.description ? taskA.description : taskA.reward;
+        let stringB = orderBy === OrderTaskBy.description ? taskB.description : taskB.reward;
 
         if (stringA < stringB) {
           return -1;
@@ -112,8 +111,8 @@ Hero.prototype.getTaskToCompleteBy = function(orderBy, direction){
     }
     else{
       orderbyFunction = function(taskA, taskB){
-        let stringA = orderBy === orderTaskBy.description ? taskA.description : taskA.reward;
-        let stringB = orderBy === orderTaskBy.description ? taskB.description : taskB.reward;
+        let stringA = orderBy === OrderTaskBy.description ? taskA.description : taskA.reward;
+        let stringB = orderBy === OrderTaskBy.description ? taskB.description : taskB.reward;
 
         if (stringA < stringB) {
           return 1;
